@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="486.0" prefWidth="771.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.clickme.rac.controller.RentalPaymentFormController">
+    <stylesheets>
+        <URL value="@/lk/clickme/rac/view/style/rentalpaymentform.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="494.0" fitWidth="779.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/Mainjpg.jpeg" />
+         </image>
+      </ImageView>
+      <Separator layoutY="95.0" prefHeight="17.0" prefWidth="779.0" style="-fx-background-color: #470f0f;" />
+      <Label layoutX="271.0" layoutY="20.0" prefHeight="51.0" prefWidth="276.0" text="Rent A car Manager" textFill="#636563" underline="true">
+         <font>
+            <Font name="Calibri Bold" size="32.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblRentalPayment" layoutX="14.0" layoutY="113.0" onMouseClicked="#tblRowSelected" prefHeight="271.0" prefWidth="502.0">
+         <columns>
+            <TableColumn prefWidth="71.20004081726074" text="Rental ID" />
+            <TableColumn prefWidth="72.79999542236328" text="CID" />
+            <TableColumn prefWidth="85.60003662109375" text="Vehicle ID" />
+            <TableColumn prefWidth="94.39996337890625" text="Rent Date" />
+            <TableColumn prefWidth="96.79998779296875" text="Rent To" />
+            <TableColumn prefWidth="77.60003662109375" text="Rental State" />
+         </columns>
+      </TableView>
+      <Label layoutX="304.0" layoutY="54.0" prefHeight="51.0" prefWidth="276.0" text="Settle The Rental" textFill="#7b8cb9">
+         <font>
+            <Font name="Calibri Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="23.0" layoutY="41.0" mnemonicParsing="false" onAction="#btnBackClicked" text="Back" />
+      <Button layoutX="651.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnFinishPaymentClicked" prefHeight="25.0" prefWidth="100.0" text="Finish Payment" />
+      <JFXTextField fx:id="txtCustomerID" labelFloat="true" layoutX="528.0" layoutY="140.0" prefHeight="25.0" prefWidth="199.0" promptText="Customer ID:" />
+      <JFXTextField fx:id="txtPaneltyFee" layoutX="527.0" layoutY="285.0" prefHeight="25.0" prefWidth="199.0" promptText="Panelty Fee" />
+      <JFXTextField fx:id="txtAmount" labelFloat="true" layoutX="528.0" layoutY="339.0" prefHeight="25.0" prefWidth="199.0" promptText="Total Amount::" />
+      <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="527.0" layoutY="203.0" prefHeight="25.0" prefWidth="199.0" promptText="Customer Name:" />
+      <JFXComboBox fx:id="cmdPayaMethod" layoutX="528.0" layoutY="248.0" promptText="Payment Method" />
+   </children>
+</AnchorPane>

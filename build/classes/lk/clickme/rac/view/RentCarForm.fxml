@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="438.0" prefWidth="770.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.clickme.rac.controller.RentCarFormController">
+    <stylesheets>
+        <URL value="@/lk/clickme/rac/view/style/rentcarform.css" />
+    </stylesheets>
+   <children>
+      <Separator layoutX="17.0" layoutY="77.0" prefHeight="17.0" prefWidth="748.0" style="-fx-background-color: #470f0f;" />
+      <ImageView fitHeight="492.0" fitWidth="770.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/Mainjpg.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="257.0" layoutY="-9.0" prefHeight="51.0" prefWidth="276.0" text="Rent A car Manager" textFill="#636563" underline="true">
+         <font>
+            <Font name="Calibri Bold" size="32.0" />
+         </font>
+      </Label>
+      <Button layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#btnBackClicked" text="Back" />
+      <TableView fx:id="tblVehicle" layoutX="264.0" layoutY="115.0" onMouseClicked="#tblVehicleClicked" prefHeight="359.0" prefWidth="500.0">
+         <columns>
+            <TableColumn prefWidth="56.0" text="VID" />
+            <TableColumn prefWidth="111.0" text="VEHICLE NUMBER" />
+            <TableColumn prefWidth="121.0" text="Category" />
+            <TableColumn prefWidth="126.0" text="Brand" />
+            <TableColumn prefWidth="84.0" text="Vehicle Rate" />
+         </columns>
+      </TableView>
+      <Label layoutX="432.0" layoutY="89.0" prefHeight="34.0" prefWidth="178.0" text="Available Vehicles">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="307.0" layoutY="28.0" prefHeight="51.0" prefWidth="276.0" text="Rent A Vehicle" textFill="#7b8cb9">
+         <font>
+            <Font name="Calibri Bold" size="28.0" />
+         </font>
+      </Label>
+      <Pane layoutX="11.0" layoutY="103.0" prefHeight="369.0" prefWidth="242.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;">
+         <children>
+            <JFXTextField fx:id="txtcID" labelFloat="true" layoutX="12.0" layoutY="52.0" prefHeight="25.0" prefWidth="209.0" promptText="Customer ID:" />
+            <JFXTextField fx:id="txtVehicleID" labelFloat="true" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="209.0" promptText="Vehicle ID:" />
+            <Button layoutX="169.0" layoutY="276.0" mnemonicParsing="false" onAction="#cacelrentClicked" style="-fx-background-color: #ed1a1a;" text="Cancel" />
+            <Button layoutX="107.0" layoutY="277.0" mnemonicParsing="false" onAction="#rentVehicleClicked" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: LightGreen;" text="Rent" />
+            <JFXDatePicker fx:id="txtRentDate" layoutX="12.0" layoutY="149.0" promptText="Rent From:" />
+            <JFXDatePicker fx:id="txtRentEndDate" layoutX="12.0" layoutY="195.0" promptText="Rent To:" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

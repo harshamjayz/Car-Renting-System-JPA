@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-06-29T21:31:45 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6888ab40-c6ed-4cc0-ad9f-ea034b66d54b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rent_a_carDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Fromdate" class="java.util.Date"/>
+	<parameter name="Todate" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[select * from rentaldetail where rentFrom between $P{Fromdate} and $P{Todate};]]>
+	</queryString>
+	<field name="RentalID" class="java.lang.Integer"/>
+	<field name="customerID" class="java.lang.Integer"/>
+	<field name="vehicleID" class="java.lang.Integer"/>
+	<field name="rentalState" class="java.lang.Integer"/>
+	<field name="rentFrom" class="java.sql.Date"/>
+	<field name="rentTo" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="215" y="4" width="127" height="30" uuid="2ce54c50-73c6-43d0-97bc-30afc9b87e01"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Monthly Report"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="40" width="95" height="30" uuid="4314641c-74e6-4b86-8c29-4088c3c82234"/>
+				<textFieldExpression><![CDATA[$F{RentalID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="40" width="92" height="30" uuid="c1e8824b-385d-4b1f-8305-a83fa7325ca4"/>
+				<textFieldExpression><![CDATA[$F{customerID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="40" width="92" height="30" uuid="e3f019fe-4ef5-4817-8e7b-44d7959e8985"/>
+				<textFieldExpression><![CDATA[$F{vehicleID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="40" width="92" height="30" uuid="410447e2-aa58-4095-a6bd-022acf2a8eaf"/>
+				<textFieldExpression><![CDATA[$F{rentalState}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="40" width="92" height="30" uuid="5c262815-5e18-4e6c-b0a2-3d6da3d595ba"/>
+				<textFieldExpression><![CDATA[$F{rentFrom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="40" width="92" height="30" uuid="2f1722ff-d5c2-483a-8c6f-f0bc31258947"/>
+				<textFieldExpression><![CDATA[$F{rentTo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+</jasperReport>

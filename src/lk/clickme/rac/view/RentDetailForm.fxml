@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="467.0" prefWidth="748.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.clickme.rac.controller.RentDetailFormController">
+    <stylesheets>
+        <URL value="@/lk/clickme/rac/view/style/rentdetailform.css" />
+    </stylesheets>
+   <children>
+      <Separator layoutX="1.0" layoutY="63.0" prefHeight="17.0" prefWidth="781.0" style="-fx-background-color: #470f0f;" />
+      <ImageView fitHeight="520.0" fitWidth="780.0" layoutX="1.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/Mainjpg.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="277.0" layoutY="-10.0" prefHeight="51.0" prefWidth="276.0" text="Rent A car Manager" textFill="#636563" underline="true">
+         <font>
+            <Font name="Calibri Bold" size="32.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblRentDetail" layoutX="67.0" layoutY="90.0" prefHeight="338.0" prefWidth="640.0">
+         <columns>
+            <TableColumn prefWidth="71.19998168945312" text="Rent ID" />
+            <TableColumn prefWidth="108.79998779296875" text="Customer ID" />
+            <TableColumn prefWidth="131.2000274658203" text="Vehicle ID" />
+            <TableColumn prefWidth="111.99993896484375" text="Rent Date" />
+            <TableColumn prefWidth="111.20001220703125" text="Rent To" />
+            <TableColumn prefWidth="106.4000244140625" text="Rental State" />
+         </columns>
+      </TableView>
+      <Label layoutX="323.0" layoutY="24.0" prefHeight="51.0" prefWidth="276.0" text="Rental Details" textFill="#7b8cb9">
+         <font>
+            <Font name="Calibri Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="24.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnBackClicked" text="Back" />
+      <Button layoutX="501.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnGenarateReport" text="Genarate Report" />
+      <JFXDatePicker fx:id="pickerFromDate" layoutX="51.0" layoutY="438.0" promptText="From" />
+      <JFXDatePicker fx:id="pickerToDate" layoutX="245.0" layoutY="435.0" promptText="To" />
+   </children>
+</AnchorPane>
